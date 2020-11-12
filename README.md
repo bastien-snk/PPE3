@@ -8,8 +8,6 @@ Le logiciel ??? est un logiciel développé en Java 8 qui permettra à votre ent
 
   - Ajout de la Javadoc, tout nos fichiers sont désormais commentés pour que vous puissez les éditer et nous proposer des forks ! ⌨️
   - Génération des factures de ventes en fichier PDF
-  - Envoyer une requête Ping entre deux Adresses IP 🛰️
-  - Affichage de toutes les IP disponibles sur le réseau 🌐
 
 ### Pré-requis 👌
 
