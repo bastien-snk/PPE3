@@ -7,13 +7,13 @@ Le logiciel Perpi&Co est un logiciel développé en Java 8 qui permettra à votr
 ### Nouveaux ajouts 🏷️
 
   - Ajout de la Javadoc, tout nos fichiers sont désormais commentés pour que vous puissez les éditer et nous proposer des forks ! ⌨️
-  - Génération des factures de ventes en fichier PDF
+  - Génération des factures de ventes en fichier PDF 💴
 
 ### Pré-requis 👌
 
 Pour pouvoir éditer le logiciel, vous devrez disposer des ressources suivantes:
 
-* [IDE] - Un environnement de développement integré pour pouvoir visualiser, éditer et compiler le logiciel
+* [IDE] - Un environnement de développement integré pour pouvoir visualiser, éditer et compiler le logiciel 🚇
 * [Development Kit] - Kit de développement de Java en version 1.8 ♨️
 * [Maven] - Outil de gestion et d'automatisation de production des projets logiciels en Java 🌊
 * [Swing] - Bibliothèque graphique de Java 📚
