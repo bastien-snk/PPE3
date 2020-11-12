@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Le logiciel ??? est un logiciel développé en Java 8 qui permettra à votre entreprise de gérer son système de vente de manière instantanée et de pouvoir effectuer des ventes au près des clients.
+Le logiciel Perpi&Co est un logiciel développé en Java 8 qui permettra à votre entreprise de gérer son système de vente de manière instantanée et de pouvoir effectuer des ventes au près des clients.
 
 ### Nouveaux ajouts 🏷️
 
@@ -41,4 +41,4 @@ Il vous faudra ensuite installer la base de données du logiciel:
  
 ### Documentation ✏️
 
-  - 📖 Manuel d'utilisation - https://docs.google.com/document/d/1eDQf6NY7iOiokJK9hw9RMCRK9vgtlNM5qO-A-KNYgBw/edit?usp=sharing
+  - 📖 Manuel d'utilisation - SOON
