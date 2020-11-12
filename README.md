@@ -32,13 +32,12 @@ git clone https://github.com/rootxls/PPE.git
 Pour que le logiciel soit fonctionnel, il vous faut installer MySQL et PHPMyAdmin, il est possible de les installer grâce à WAMP (Windows), pour les utilisateurs de Linux voici un tutoriel: http://elisabeth.pointal.org/doc/code/server/lamp/phpmyadmin
 
 Il vous faudra ensuite installer la base de données du logiciel:
- -> Connectez vous sur PHPMyAdmin
- 
- -> Allez sur la page Importer
- -> Cliquez sur choisir un fichier (cela vous ouvre un Explorateur de fichiers)
- -> Rendez-vous dans le dossier PPE3 que nous avons fait auparavant
- -> Séléctionnez le fichier PPE3.sql
- -> Cliquez sur le boutton "Go"
+ - Connectez vous sur PHPMyAdmin
+ - Allez sur la page Importer
+ - Cliquez sur choisir un fichier (cela vous ouvre un Explorateur de fichiers)
+ - Rendez-vous dans le dossier PPE3 que nous avons fait auparavant
+ - Séléctionnez le fichier PPE3.sql
+ - Cliquez sur le boutton "Go"
  
  Ensuite, ouvrez le projet sur votre IDE, et maintenant, modifiez les informations de connexion au serveur MySQL, vous devrez changer:
  
