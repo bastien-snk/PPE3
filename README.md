@@ -47,4 +47,4 @@ Il vous faudra ensuite installer la base de données du logiciel:
  
 ### Documentation ✏️
 
-  - 📖 Manuel d'utilisation - SOON
+  - 📖 Manuel d'utilisation - https://docs.google.com/document/d/1pU1T9iv3ZP5yI126A3Z7TMTweKYT6JHhjVJc9FrccGs/edit?usp=sharing
