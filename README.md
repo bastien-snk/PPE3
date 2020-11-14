@@ -39,11 +39,13 @@ Il vous faudra ensuite installer la base de données du logiciel:
  - Séléctionnez le fichier PPE3.sql
  - Cliquez sur le boutton "Go"
  
- Ensuite, ouvrez le projet sur votre IDE, et maintenant, modifiez les informations de connexion au serveur MySQL, vous devrez changer:
+ Ensuite, ouvrez le projet sur votre IDE, et maintenant, modifiez les informations de connexion au serveur MySQL (DataAccessObject.java), vous devrez changer:
  
  - L'IP par celle de votre serveur
  - Le port par celui que vous utilisez (si vous avez modifié le port de MySQL)
  - Les identifiants de connexion (username:password)
+ 
+ En dernier temps, vous devrez accéder au FactureManager et modifier le chemin de sauvegarde des factures.
  
 ### Documentation ✏️
 
