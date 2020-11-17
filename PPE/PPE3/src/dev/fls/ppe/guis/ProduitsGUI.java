@@ -46,7 +46,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
         DefaultComboBoxModel model = (DefaultComboBoxModel) categoriesList.getModel();
         for(int i = 0; i < ProductManager.getInstance().getCategories().size(); i++) {
             Categorie categorie = ProductManager.getInstance().getCategories().get(i);
-            model.addElement(categorie.getNom());
+            model.insertElementAt(categorie.getNom(), i);
         }
         categoriesList.setModel(model);
     }
@@ -412,7 +412,8 @@ public class ProduitsGUI extends javax.swing.JFrame {
                     }
                 }
                 if(product.getIdCategorie() == categorieSelected.getIdCategorie()) {
-                    listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
+                    listeProductsModel.insertElementAt(product.getNomProduit() + " - " + product.getPrix() + "€", i);
+                    //listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
                 }
             }
         } else {
