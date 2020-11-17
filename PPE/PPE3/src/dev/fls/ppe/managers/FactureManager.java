@@ -17,18 +17,38 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.stream.Stream;
 
+/**
+ * Cette classe permet la génération d'une facture en fournissant une vente
+ *
+ * @author b.siniak
+ * @version 1.0
+ */
 public class FactureManager {
+
+    /**
+     * Attributs
+     */
     Document document = new Document();
     PdfWriter pdf;
     String path = "C:\\Users\\b.siniak\\Documents\\";
     Vente vente;
 
+    /**
+     * Constructeur de l'objet, il permet de créer le fichier PDF avec une vente
+     *
+     * @param vente - Objet vente
+     * @throws FileNotFoundException - Exception en cas de fichier non trouvé
+     * @throws DocumentException
+     */
     public FactureManager(Vente vente) throws FileNotFoundException, DocumentException {
         pdf = PdfWriter.getInstance(document, new FileOutputStream(path +"Facture-" + vente.getIdVente() + ".pdf"));
         this.vente = vente;
         this.printFacture();
     }
 
+    /**
+     * GETTERS ET SETTERS
+     */
     public Document getDocument() {
         return document;
     }
@@ -37,6 +57,10 @@ public class FactureManager {
         return pdf;
     }
 
+    /**
+     * Utilise la vente pour trouver les paramètres de la facture et les insérer dans le PDF
+     * @throws DocumentException
+     */
     public void printFacture() throws DocumentException {
         Client client = ClientManager.getInstance().getClientByIdFromDB(vente.getIdClient());
         Account agent = AccountManager.getInstance().getAccountInfoById(vente.getIdAgent());
@@ -61,10 +85,12 @@ public class FactureManager {
         document.close();
     }
 
+    /**
+     * Ajouter un ligne au document
+     * @param line
+     * @throws DocumentException
+     */
     public void addLine(String line) throws DocumentException {
         document.add(new Paragraph(line));
-    }
-
-    public void savePdf() {
     }
 }
