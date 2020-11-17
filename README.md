@@ -50,5 +50,5 @@ Il vous faudra ensuite installer la base de données du logiciel:
  
 ### Documentation ✏️
 
-  - 📖 Documentation (développeurs) - https://docs.google.com/document/d/1pU1T9iv3ZP5yI126A3Z7TMTweKYT6JHhjVJc9FrccGs/edit?usp=sharing
+  - 📖 Documentation (développeurs & administrateurs) - https://docs.google.com/document/d/1pU1T9iv3ZP5yI126A3Z7TMTweKYT6JHhjVJc9FrccGs/edit?usp=sharing
   - 📖 Documentation (utilisateurs) - https://docs.google.com/document/d/1d3BfzXZf-edxrizproyTgFypcrfB59D74jVE4QkD7Qs/edit?usp=sharing
