@@ -15,6 +15,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -398,24 +399,41 @@ public class ProduitsGUI extends javax.swing.JFrame {
     }
 
     private void categoriesListActionPerformed(ActionEvent evt) {
+        ProductManager.getInstance().getProductsFromDB();
         DefaultListModel listeProductsModel = (DefaultListModel) productsList.getModel();
         listeProductsModel.clear();
-        ProductManager.getInstance().getProductsFromDB();
+
+        Categorie categorieee = ProductManager.getInstance().getCategoryWithName(categoriesList.getSelectedItem().toString());
+
+        List<Product> products = ProductManager.getInstance().getProductsWithCategorie(categorieee);
+
+
+
+        System.out.println(categorieee.getNom());
+
         if(ProductManager.getInstance().getProducts().size() > 0) {
-            Categorie categorieSelected = null;
+            for(Product product : products) {
+                listeProductsModel.addElement(product.getNomProduit() + " - " + product.getPrix() + "€");
+            }
+            /*Categorie categorieSelected = null;
 
             for(int i = 0; i < ProductManager.getInstance().getProducts().size(); i++) {
                 Product product = ProductManager.getInstance().getProducts().get(i);
                 for(Categorie categorie : ProductManager.getInstance().getCategories()) {
-                    if(categorie.getNom() == categoriesList.getSelectedItem()) {
-                        categorieSelected = categorie;
+                    if(product.getIdCategorie().getNom().equalsIgnoreCase(categoriesList.getSelectedItem().toString())) {
+                        listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
+                        System.out.println("add");
                     }
                 }
-                if(product.getIdCategorie() == categorieSelected.getIdCategorie()) {
-                    listeProductsModel.insertElementAt(product.getNomProduit() + " - " + product.getPrix() + "€", i);
-                    //listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
+                if(product.getIdCategorie() == categorieee.getIdCategorie()) {
+                    listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
+                    System.out.println("add");
                 }
-            }
+                if(categoriesList.getSelectedItem().toString() == ProductManager.getInstance().get) {
+                    //listeProductsModel.insertElementAt(product.getNomProduit() + " - " + product.getPrix() + "€", i);
+                    listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
+                }
+            }*/
         } else {
             listeProductsModel.add(0, "PAS DE PRODUITS POUR CETTE CATEGORIE");
         }
