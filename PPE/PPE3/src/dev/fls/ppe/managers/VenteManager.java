@@ -162,4 +162,15 @@ public class VenteManager {
             JOptionPane.showMessageDialog(null, "Erreur ! Veuillez réessayer...");
         }
     }
+
+    public void removeStockFromProducts(Vente vente) {
+        for(Product product : vente.getPanier()) {
+            try {
+                int quantite = ProductManager.getInstance().getProductWithId(product.getIdProduit()).getQuantite();
+                DataAccessObject.getInstance().requeteSelection("UPDATE produits SET quantite = " + (quantite - product.getQuantite()) + " WHERE idProduit = '" + product.getIdProduit()  +"'");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

@@ -202,41 +202,4 @@ public class ProductManager {
         }
         return panier;
     }
-
-    public Categorie getCategoryWithName(String name) {
-        try {
-            categories.clear();
-            ResultSet rs = DataAccessObject.getInstance().requeteSelection("SELECT * FROM `categories` WHERE nom = '"+ name +"'");
-            while (rs.next()) {
-                int id =  rs.getInt("idCategorie");
-                String nom = rs.getString("nom");
-                rs.close();
-                return new Categorie(id, nom);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public List<Product> getProductsWithCategorie(Categorie categorie) {
-        List<Product> products = new ArrayList<>();
-        try {
-            categories.clear();
-            ResultSet rs = DataAccessObject.getInstance().requeteSelection("SELECT * FROM `produits` WHERE idCategorie = '"+ categorie.getIdCategorie() +"'");
-            while (rs.next()) {
-                int idProduit = rs.getInt("idProduit");
-                String nom = rs.getString("nomProduit");
-                int quantite = rs.getInt("quantite");
-                String image = rs.getString("image");
-                float evaluations = rs.getFloat("evaluations");
-                double prix = rs.getDouble("prix");
-                products.add(new Product(idProduit, categorie.getIdCategorie(), quantite, nom, image, prix, evaluations));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return products;
-    }
 }

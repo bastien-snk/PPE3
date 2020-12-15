@@ -39,6 +39,7 @@ public class AdminGUI extends javax.swing.JFrame {
             produitsGUI.setLocation(this.getLocation());
             produitsGUI.setVisible(true);
             this.setVisible(false);
+dispose();
             JOptionPane.showMessageDialog(null, "Vous n'avez pas les droits administrateurs.");
             return;
         }
@@ -238,7 +239,7 @@ public class AdminGUI extends javax.swing.JFrame {
 
         telephoneField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        creerFactureButton1.setBackground(new java.awt.Color(255, 0, 0));
+        creerFactureButton1.setBackground(new java.awt.Color(16, 86, 160));
         creerFactureButton1.setForeground(new java.awt.Color(255, 255, 255));
         creerFactureButton1.setText("Créer la facture");
 
@@ -294,7 +295,7 @@ public class AdminGUI extends javax.swing.JFrame {
 
         menuPanel.setBackground(new java.awt.Color(96, 96, 96));
 
-        produitsButton.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton.setText("PRODUITS");
         produitsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -303,7 +304,7 @@ public class AdminGUI extends javax.swing.JFrame {
             }
         });
 
-        clientsButton.setBackground(new java.awt.Color(255, 0, 0));
+        clientsButton.setBackground(new java.awt.Color(16, 86, 160));
         clientsButton.setForeground(new java.awt.Color(255, 255, 255));
         clientsButton.setText("CLIENTS");
         clientsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -312,7 +313,7 @@ public class AdminGUI extends javax.swing.JFrame {
             }
         });
 
-        adminButton.setBackground(new java.awt.Color(255, 0, 0));
+        adminButton.setBackground(new java.awt.Color(16, 86, 160));
         adminButton.setForeground(new java.awt.Color(255, 255, 255));
         adminButton.setText("ADMIN");
 
@@ -330,7 +331,7 @@ public class AdminGUI extends javax.swing.JFrame {
         nomLabel2.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel2.setText("Tyoe de profil");
 
-        addClientButton1.setBackground(new java.awt.Color(255, 0, 0));
+        addClientButton1.setBackground(new java.awt.Color(16, 86, 160));
         addClientButton1.setForeground(new java.awt.Color(255, 255, 255));
         addClientButton1.setText("Créer le profil");
         addClientButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -372,15 +373,15 @@ public class AdminGUI extends javax.swing.JFrame {
         listeProfils.setModel(new javax.swing.DefaultListModel<String>());
         jScrollPane5.setViewportView(listeProfils);
 
-        precedentButton.setBackground(new java.awt.Color(255, 0, 0));
+        precedentButton.setBackground(new java.awt.Color(16, 86, 160));
         precedentButton.setForeground(new java.awt.Color(255, 255, 255));
         precedentButton.setText("Précédent");
 
-        suivantButton.setBackground(new java.awt.Color(255, 0, 0));
+        suivantButton.setBackground(new java.awt.Color(16, 86, 160));
         suivantButton.setForeground(new java.awt.Color(255, 255, 255));
         suivantButton.setText("Suivant");
 
-        selectionButton.setBackground(new java.awt.Color(255, 0, 0));
+        selectionButton.setBackground(new java.awt.Color(16, 86, 160));
         selectionButton.setForeground(new java.awt.Color(255, 255, 255));
         selectionButton.setText("Séléction");
         selectionButton.addActionListener(new java.awt.event.ActionListener() {
@@ -422,7 +423,7 @@ public class AdminGUI extends javax.swing.JFrame {
 
         jPanel11.setBackground(new java.awt.Color(96, 96, 96));
 
-        addClientButton3.setBackground(new java.awt.Color(255, 0, 0));
+        addClientButton3.setBackground(new java.awt.Color(16, 86, 160));
         addClientButton3.setForeground(new java.awt.Color(255, 255, 255));
         addClientButton3.setText("Modifier le profil");
         addClientButton3.addActionListener(new ActionListener() {
@@ -438,7 +439,7 @@ public class AdminGUI extends javax.swing.JFrame {
         nomLabel4.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel4.setText("Tyoe de profil");
 
-        addClientButton4.setBackground(new java.awt.Color(255, 0, 0));
+        addClientButton4.setBackground(new java.awt.Color(16, 86, 160));
         addClientButton4.setForeground(new java.awt.Color(255, 255, 255));
         addClientButton4.setText("Supprimer le profil");
         addClientButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -536,7 +537,7 @@ public class AdminGUI extends javax.swing.JFrame {
         nomLabel.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel.setText("E-Mail");
 
-        addClientButton.setBackground(new java.awt.Color(255, 0, 0));
+        addClientButton.setBackground(new java.awt.Color(16, 86, 160));
         addClientButton.setForeground(new java.awt.Color(255, 255, 255));
         addClientButton.setText("Ajouter l'agent");
         addClientButton.addActionListener(new ActionListener() {
@@ -599,7 +600,7 @@ public class AdminGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listeAgents);
 
-        produitsButton1.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton1.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton1.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton1.setText("Précédent");
         produitsButton1.addActionListener(new ActionListener() {
@@ -609,7 +610,7 @@ public class AdminGUI extends javax.swing.JFrame {
             }
         });
 
-        produitsButton2.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton2.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton2.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton2.setText("Suivant");
         produitsButton2.addActionListener(new ActionListener() {
@@ -619,7 +620,7 @@ public class AdminGUI extends javax.swing.JFrame {
             }
         });
 
-        produitsButton3.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton3.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton3.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton3.setText("Séléction");
         produitsButton3.addActionListener(new ActionListener() {
@@ -662,7 +663,7 @@ public class AdminGUI extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(96, 96, 96));
 
-        addClientButton2.setBackground(new java.awt.Color(255, 0, 0));
+        addClientButton2.setBackground(new java.awt.Color(16, 86, 160));
         addClientButton2.setForeground(new java.awt.Color(255, 255, 255));
         addClientButton2.setText("Modifier l'agent");
 
@@ -688,7 +689,7 @@ public class AdminGUI extends javax.swing.JFrame {
         nomLabel3.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel3.setText("Nom");
 
-        addClientButton5.setBackground(new java.awt.Color(255, 0, 0));
+        addClientButton5.setBackground(new java.awt.Color(16, 86, 160));
         addClientButton5.setForeground(new java.awt.Color(255, 255, 255));
         addClientButton5.setText("Supprimer l'agent");
         addClientButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -798,11 +799,11 @@ public class AdminGUI extends javax.swing.JFrame {
         listeStatsVentes.setModel(new javax.swing.DefaultListModel<String>());
         jScrollPane3.setViewportView(listeStatsVentes);
 
-        produitsButton4.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton4.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton4.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton4.setText("Précédent");
 
-        produitsButton5.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton5.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton5.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton5.setText("Suivant");
 
@@ -841,7 +842,7 @@ public class AdminGUI extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(listeStocksVentes);
 
-        produitsButton6.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton6.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton6.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton6.setText("Précédent");
         produitsButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -850,7 +851,7 @@ public class AdminGUI extends javax.swing.JFrame {
             }
         });
 
-        produitsButton7.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton7.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton7.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton7.setText("Suivant");
         produitsButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -1020,6 +1021,7 @@ public class AdminGUI extends javax.swing.JFrame {
         produitsGUI.setLocation(this.getLocation());
         produitsGUI.setVisible(true);
         this.setVisible(false);
+dispose();
     }
 
     private void clientsButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -1027,6 +1029,7 @@ public class AdminGUI extends javax.swing.JFrame {
         clientsGUI.setLocation(this.getLocation());
         clientsGUI.setVisible(true);
         this.setVisible(false);
+dispose();
     }
 
     private void produitsButton6ActionPerformed(ActionEvent evt) {

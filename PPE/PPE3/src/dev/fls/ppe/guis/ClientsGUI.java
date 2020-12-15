@@ -28,8 +28,8 @@ public class ClientsGUI extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Perpi&Co - Clients");
         modifierPanel.setVisible(false);
-        updateClientsList();
-        untoggleAdminOptions();
+        /*updateClientsList();
+        untoggleAdminOptions();*/
     }
 
     private void untoggleAdminOptions() {
@@ -127,7 +127,7 @@ public class ClientsGUI extends javax.swing.JFrame {
 
         telephoneField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        creerFactureButton1.setBackground(new java.awt.Color(255, 0, 0));
+        creerFactureButton1.setBackground(new java.awt.Color(16, 86, 160));
         creerFactureButton1.setForeground(new java.awt.Color(255, 255, 255));
         creerFactureButton1.setText("Créer la facture");
 
@@ -183,7 +183,7 @@ public class ClientsGUI extends javax.swing.JFrame {
 
         menuPanel.setBackground(new java.awt.Color(96, 96, 96));
 
-        produitsButton.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton.setText("PRODUITS");
         produitsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -192,11 +192,11 @@ public class ClientsGUI extends javax.swing.JFrame {
             }
         });
 
-        clientsButton.setBackground(new java.awt.Color(255, 0, 0));
+        clientsButton.setBackground(new java.awt.Color(16, 86, 160));
         clientsButton.setForeground(new java.awt.Color(255, 255, 255));
         clientsButton.setText("CLIENTS");
 
-        adminButton.setBackground(new java.awt.Color(255, 0, 0));
+        adminButton.setBackground(new java.awt.Color(16, 86, 160));
         adminButton.setForeground(new java.awt.Color(255, 255, 255));
         adminButton.setText("ADMIN");
         adminButton.addActionListener(new java.awt.event.ActionListener() {
@@ -233,7 +233,7 @@ public class ClientsGUI extends javax.swing.JFrame {
         nomLabel.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel.setText("Nom");
 
-        addClientButton.setBackground(new java.awt.Color(255, 0, 0));
+        addClientButton.setBackground(new java.awt.Color(16, 86, 160));
         addClientButton.setForeground(new java.awt.Color(255, 255, 255));
         addClientButton.setText("Ajouter le client");
         addClientButton.addActionListener(new java.awt.event.ActionListener() {
@@ -295,7 +295,7 @@ public class ClientsGUI extends javax.swing.JFrame {
         listeClients.setModel(new DefaultListModel<>());
         jScrollPane1.setViewportView(listeClients);
 
-        precedentButton.setBackground(new java.awt.Color(255, 0, 0));
+        precedentButton.setBackground(new java.awt.Color(16, 86, 160));
         precedentButton.setForeground(new java.awt.Color(255, 255, 255));
         precedentButton.setText("Précédent");
         precedentButton.addActionListener(new java.awt.event.ActionListener() {
@@ -304,7 +304,7 @@ public class ClientsGUI extends javax.swing.JFrame {
             }
         });
 
-        suivantButton.setBackground(new java.awt.Color(255, 0, 0));
+        suivantButton.setBackground(new java.awt.Color(16, 86, 160));
         suivantButton.setForeground(new java.awt.Color(255, 255, 255));
         suivantButton.setText("Suivant");
         suivantButton.addActionListener(new java.awt.event.ActionListener() {
@@ -313,7 +313,7 @@ public class ClientsGUI extends javax.swing.JFrame {
             }
         });
 
-        selectionButton.setBackground(new java.awt.Color(255, 0, 0));
+        selectionButton.setBackground(new java.awt.Color(16, 86, 160));
         selectionButton.setForeground(new java.awt.Color(255, 255, 255));
         selectionButton.setText("Séléction");
         selectionButton.addActionListener(new java.awt.event.ActionListener() {
@@ -355,7 +355,7 @@ public class ClientsGUI extends javax.swing.JFrame {
 
         modifierPanel.setBackground(new java.awt.Color(96, 96, 96));
 
-        addClientButton1.setBackground(new java.awt.Color(255, 0, 0));
+        addClientButton1.setBackground(new java.awt.Color(16, 86, 160));
         addClientButton1.setForeground(new java.awt.Color(255, 255, 255));
         addClientButton1.setText("Modifier le client");
         addClientButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -477,12 +477,7 @@ public class ClientsGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // ACTIONS
-    private void adminButtonActionPerformed(ActionEvent evt) {
-        AdminGUI adminGUI = new AdminGUI();
-        adminGUI.setLocation(this.getLocation());
-        adminGUI.setVisible(true);
-        this.setVisible(false);
-    }
+
 
     private void precedentButtonActionPerformed(ActionEvent evt) {
         if(listeClients.getSelectedIndex() > 0) {
@@ -526,6 +521,15 @@ public class ClientsGUI extends javax.swing.JFrame {
         produitsGUI.setLocation(this.getLocation());
         produitsGUI.setVisible(true);
         this.setVisible(false);
+        dispose();
+    }
+
+    private void adminButtonActionPerformed(ActionEvent evt) {
+        AdminGUI adminGUI = new AdminGUI();
+        adminGUI.setLocation(this.getLocation());
+        adminGUI.setVisible(true);
+        this.setVisible(false);
+        dispose();
     }
 
     /**

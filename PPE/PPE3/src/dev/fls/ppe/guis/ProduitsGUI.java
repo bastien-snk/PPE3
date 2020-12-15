@@ -15,7 +15,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.List;
 
 /**
  *
@@ -47,7 +46,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
         DefaultComboBoxModel model = (DefaultComboBoxModel) categoriesList.getModel();
         for(int i = 0; i < ProductManager.getInstance().getCategories().size(); i++) {
             Categorie categorie = ProductManager.getInstance().getCategories().get(i);
-            model.insertElementAt(categorie.getNom(), i);
+            model.addElement(categorie.getNom());
         }
         categoriesList.setModel(model);
     }
@@ -116,7 +115,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
 
         telephoneField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        creerVenteButton.setBackground(new java.awt.Color(255, 0, 0));
+        creerVenteButton.setBackground(new java.awt.Color(16, 86, 160));
         creerVenteButton.setForeground(new java.awt.Color(255, 255, 255));
         creerVenteButton.setText("Créer une vente");
         creerVenteButton.addActionListener(new ActionListener() {
@@ -227,7 +226,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
 
         //ventesPanel.add(prenomField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 128, -1));
 
-        creerFactureButton.setBackground(new java.awt.Color(255, 0, 0));
+        creerFactureButton.setBackground(new java.awt.Color(16, 86, 160));
         creerFactureButton.setForeground(new java.awt.Color(255, 255, 255));
         creerFactureButton.setText("Créer une vente");
         creerFactureButton.addActionListener(new ActionListener() {
@@ -262,7 +261,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
 
         emailField2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        addProductButton.setBackground(new java.awt.Color(255, 0, 0));
+        addProductButton.setBackground(new java.awt.Color(16, 86, 160));
         addProductButton.setForeground(new java.awt.Color(255, 255, 255));
         addProductButton.setText("Ajouter un produit");
         addProductButton.addActionListener(new java.awt.event.ActionListener() {
@@ -311,7 +310,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Gérer", gererProduit);
 
-        produitsButton.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton.setText("PRODUITS");
         produitsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -320,7 +319,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
             }
         });
 
-        clientsButton.setBackground(new java.awt.Color(255, 0, 0));
+        clientsButton.setBackground(new java.awt.Color(16, 86, 160));
         clientsButton.setForeground(new java.awt.Color(255, 255, 255));
         clientsButton.setText("CLIENTS");
         clientsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -329,7 +328,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
             }
         });
 
-        adminButton.setBackground(new java.awt.Color(255, 0, 0));
+        adminButton.setBackground(new java.awt.Color(16, 86, 160));
         adminButton.setForeground(new java.awt.Color(255, 255, 255));
         adminButton.setText("ADMIN");
         adminButton.addActionListener(new java.awt.event.ActionListener() {
@@ -387,6 +386,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
         venteGUI.setLocation(this.getLocation());
         venteGUI.setVisible(true);
         this.setVisible(false);
+dispose();
     }
 
     private void addProductButtonActionPerformed(ActionEvent evt) {
@@ -399,41 +399,23 @@ public class ProduitsGUI extends javax.swing.JFrame {
     }
 
     private void categoriesListActionPerformed(ActionEvent evt) {
-        ProductManager.getInstance().getProductsFromDB();
         DefaultListModel listeProductsModel = (DefaultListModel) productsList.getModel();
         listeProductsModel.clear();
-
-        Categorie categorieee = ProductManager.getInstance().getCategoryWithName(categoriesList.getSelectedItem().toString());
-
-        List<Product> products = ProductManager.getInstance().getProductsWithCategorie(categorieee);
-
-
-
-        System.out.println(categorieee.getNom());
-
+        ProductManager.getInstance().getProductsFromDB();
         if(ProductManager.getInstance().getProducts().size() > 0) {
-            for(Product product : products) {
-                listeProductsModel.addElement(product.getNomProduit() + " - " + product.getPrix() + "€");
-            }
-            /*Categorie categorieSelected = null;
+            Categorie categorieSelected = null;
 
             for(int i = 0; i < ProductManager.getInstance().getProducts().size(); i++) {
                 Product product = ProductManager.getInstance().getProducts().get(i);
                 for(Categorie categorie : ProductManager.getInstance().getCategories()) {
-                    if(product.getIdCategorie().getNom().equalsIgnoreCase(categoriesList.getSelectedItem().toString())) {
-                        listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
-                        System.out.println("add");
+                    if(categorie.getNom() == categoriesList.getSelectedItem()) {
+                        categorieSelected = categorie;
                     }
                 }
-                if(product.getIdCategorie() == categorieee.getIdCategorie()) {
-                    listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
-                    System.out.println("add");
-                }
-                if(categoriesList.getSelectedItem().toString() == ProductManager.getInstance().get) {
-                    //listeProductsModel.insertElementAt(product.getNomProduit() + " - " + product.getPrix() + "€", i);
+                if(product.getIdCategorie() == categorieSelected.getIdCategorie()) {
                     listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
                 }
-            }*/
+            }
         } else {
             listeProductsModel.add(0, "PAS DE PRODUITS POUR CETTE CATEGORIE");
         }
@@ -448,6 +430,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
         clientsGUI.setLocation(this.getLocation());
         clientsGUI.setVisible(true);
         this.setVisible(false);
+dispose();
     }//GEN-LAST:event_clientsButtonActionPerformed
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
@@ -455,6 +438,7 @@ public class ProduitsGUI extends javax.swing.JFrame {
         adminGUI.setLocation(this.getLocation());
         adminGUI.setVisible(true);
         this.setVisible(false);
+dispose();
     }//GEN-LAST:event_adminButtonActionPerformed
 
     /**

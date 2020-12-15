@@ -148,7 +148,7 @@ public class VenteGUI extends javax.swing.JFrame {
 
         telephoneField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        creerFactureButton1.setBackground(new java.awt.Color(255, 0, 0));
+        creerFactureButton1.setBackground(new java.awt.Color(16, 86, 160));
         creerFactureButton1.setForeground(new java.awt.Color(255, 255, 255));
         creerFactureButton1.setText("Créer la facture");
 
@@ -204,29 +204,39 @@ public class VenteGUI extends javax.swing.JFrame {
 
         menuPanel.setBackground(new java.awt.Color(96, 96, 96));
 
-        produitsButton.setBackground(new java.awt.Color(255, 0, 0));
+        produitsButton.setBackground(new java.awt.Color(16, 86, 160));
         produitsButton.setForeground(new java.awt.Color(255, 255, 255));
         produitsButton.setText("PRODUITS");
+        produitsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                produitsButtonActionPerformed(e);
+            }});
 
-        clientsButton.setBackground(new java.awt.Color(255, 0, 0));
+        clientsButton.setBackground(new java.awt.Color(16, 86, 160));
         clientsButton.setForeground(new java.awt.Color(255, 255, 255));
         clientsButton.setText("CLIENTS");
 
-        adminButton.setBackground(new java.awt.Color(255, 0, 0));
+        adminButton.setBackground(new java.awt.Color(16, 86, 160));
         adminButton.setForeground(new java.awt.Color(255, 255, 255));
         adminButton.setText("ADMIN");
+        adminButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                adminButtonActionPerformed(e);
+            }});
 
         gererPanel.setBackground(new java.awt.Color(96, 96, 96));
 
         creerVente.setBackground(new java.awt.Color(96, 96, 96));
 
-        clientsList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        clientsList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M. Olivier Gilbert", "Item 2", "Item 3", "Item 4" }));
 
         nomLabel2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         nomLabel2.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel2.setText("Client");
 
-        createVente.setBackground(new java.awt.Color(255, 0, 0));
+        createVente.setBackground(new java.awt.Color(16, 86, 160));
         createVente.setForeground(new java.awt.Color(255, 255, 255));
         createVente.setText("Créer la vente");
         createVente.addActionListener(new ActionListener() {
@@ -274,7 +284,7 @@ public class VenteGUI extends javax.swing.JFrame {
         nomLabel4.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel4.setText("Produit");
 
-        addProduct.setBackground(new java.awt.Color(255, 0, 0));
+        addProduct.setBackground(new java.awt.Color(16, 86, 160));
         addProduct.setForeground(new java.awt.Color(255, 255, 255));
         addProduct.setText("Ajouter le produit");
         addProduct.addActionListener(new ActionListener() {
@@ -320,7 +330,7 @@ public class VenteGUI extends javax.swing.JFrame {
         nomLabel5.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel5.setText("Liste des produits");
 
-        modifierQuantite.setBackground(new java.awt.Color(255, 0, 0));
+        modifierQuantite.setBackground(new java.awt.Color(16, 86, 160));
         modifierQuantite.setForeground(new java.awt.Color(255, 255, 255));
         modifierQuantite.setText("Modifier quantité");
         modifierQuantite.addActionListener(new ActionListener() {
@@ -333,7 +343,7 @@ public class VenteGUI extends javax.swing.JFrame {
         panierProductsList.setModel(new DefaultListModel<>());
         jScrollPane1.setViewportView(panierProductsList);
 
-        deleteProduct.setBackground(new java.awt.Color(255, 0, 0));
+        deleteProduct.setBackground(new java.awt.Color(16, 86, 160));
         deleteProduct.setForeground(new java.awt.Color(255, 255, 255));
         deleteProduct.setText("Supprimer");
         deleteProduct.addActionListener(new ActionListener() {
@@ -343,7 +353,7 @@ public class VenteGUI extends javax.swing.JFrame {
             }
         });
 
-        FinishVente.setBackground(new java.awt.Color(255, 0, 0));
+        FinishVente.setBackground(new java.awt.Color(16, 86, 160));
         FinishVente.setForeground(new java.awt.Color(255, 255, 255));
         FinishVente.setText("Terminer la vente");
         FinishVente.addActionListener(new ActionListener() {
@@ -353,7 +363,7 @@ public class VenteGUI extends javax.swing.JFrame {
             }
         });
 
-        CancelVente.setBackground(new java.awt.Color(255, 0, 0));
+        CancelVente.setBackground(new java.awt.Color(16, 86, 160));
         CancelVente.setForeground(new java.awt.Color(255, 255, 255));
         CancelVente.setText("Annuler la vente");
         CancelVente.addActionListener(new ActionListener() {
@@ -406,7 +416,7 @@ public class VenteGUI extends javax.swing.JFrame {
 
         finVentePanel.setBackground(new java.awt.Color(96, 96, 96));
 
-        genererFacture.setBackground(new java.awt.Color(255, 0, 0));
+        genererFacture.setBackground(new java.awt.Color(16, 86, 160));
         genererFacture.setForeground(new java.awt.Color(255, 255, 255));
         genererFacture.setText("Générer la facture");
         genererFacture.addActionListener(new ActionListener() {
@@ -444,9 +454,11 @@ public class VenteGUI extends javax.swing.JFrame {
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(adminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(clientsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(produitsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(produitsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    )
                 .addGap(18, 18, 18)
                 .addComponent(gererPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                //.addComponent(produitsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuPanelLayout.setVerticalGroup(
@@ -491,6 +503,7 @@ public class VenteGUI extends javax.swing.JFrame {
         } catch (DocumentException documentException) {
             documentException.printStackTrace();
         }
+        VenteManager.getInstance().removeStockFromProducts(vente);
     }
 
     private void CancelVenteActionPerformed(ActionEvent e) {
@@ -499,6 +512,7 @@ public class VenteGUI extends javax.swing.JFrame {
             produitsGUI.setLocation(this.getLocation());
             produitsGUI.setVisible(true);
             this.setVisible(false);
+            dispose();
         }
     }
 
@@ -511,6 +525,7 @@ public class VenteGUI extends javax.swing.JFrame {
     }
 
     private void FinishVenteActionPerformed(ActionEvent e) {
+        gererPanel.setEnabledAt(1, false);
         gererPanel.setSelectedComponent(finVentePanel);
     }
 
@@ -539,6 +554,7 @@ public class VenteGUI extends javax.swing.JFrame {
         Date date = new Date();
         vente = new Vente(VenteManager.getInstance().getMaxIdFromDB() + 1, idClient, AccountManager.getInstance().getAccountsConnected().get(0).getIdAgent(), date.getDay() + "/" + date.getMonth() + "/" + date.getYear(),0);
         VenteManager.getInstance().createVenteOnDB(vente);
+        gererPanel.setEnabledAt(0, false);
         gererPanel.setSelectedComponent(addProductPanel);
         creerVente.setVisible(false);
     }
@@ -546,6 +562,22 @@ public class VenteGUI extends javax.swing.JFrame {
     private void deleteProductActionPerformed(ActionEvent e) {
         VenteManager.getInstance().removeProductFromVente(vente, ProductManager.getInstance().getProductWithNameFromDB(panierProductsList.getSelectedValue()));
         updatePanierProducts(panierProductsList);
+    }
+
+    private void produitsButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        ProduitsGUI produitsGUI = new ProduitsGUI();
+        produitsGUI.setLocation(this.getLocation());
+        produitsGUI.setVisible(true);
+        this.setVisible(false);
+        dispose();
+    }
+
+    private void adminButtonActionPerformed(ActionEvent evt) {
+        AdminGUI adminGUI = new AdminGUI();
+        adminGUI.setLocation(this.getLocation());
+        adminGUI.setVisible(true);
+        this.setVisible(false);
+        dispose();
     }
 
     /**

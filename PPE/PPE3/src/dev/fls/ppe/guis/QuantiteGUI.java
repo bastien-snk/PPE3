@@ -42,6 +42,7 @@ public class QuantiteGUI extends javax.swing.JFrame {
     public QuantiteGUI(VenteGUI venteGUI) {
         initComponents();
         this.venteGUI = venteGUI;
+        quantiteField.setText(1 + "");
     }
 
     /**
@@ -95,7 +96,7 @@ public class QuantiteGUI extends javax.swing.JFrame {
 
         telephoneField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        creerFactureButton1.setBackground(new java.awt.Color(255, 0, 0));
+        creerFactureButton1.setBackground(new java.awt.Color(16, 86, 160));
         creerFactureButton1.setForeground(new java.awt.Color(255, 255, 255));
         creerFactureButton1.setText("Créer la facture");
 
@@ -157,7 +158,7 @@ public class QuantiteGUI extends javax.swing.JFrame {
         nomLabel2.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel2.setText("Quantité");
 
-        addProduct.setBackground(new java.awt.Color(255, 0, 0));
+        addProduct.setBackground(new java.awt.Color(16, 86, 160));
         addProduct.setForeground(new java.awt.Color(255, 255, 255));
         addProduct.setText("Ajouter le produit");
         addProduct.addActionListener(new ActionListener() {
@@ -216,6 +217,7 @@ public class QuantiteGUI extends javax.swing.JFrame {
         product.setQuantite(Integer.valueOf(quantiteField.getText()));
         VenteManager.getInstance().editProductQuantityInVente(venteGUI.vente, product);
         this.setVisible(false);
+        dispose();
     }
 
     /**

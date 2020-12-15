@@ -51,7 +51,7 @@ public class LoginGUI extends javax.swing.JFrame {
 
         panel.setBackground(new java.awt.Color(96, 96, 96));
 
-        connexionButton.setBackground(new java.awt.Color(255, 0, 0));
+        connexionButton.setBackground(new java.awt.Color(16, 86, 160));
         connexionButton.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         connexionButton.setForeground(new java.awt.Color(255, 255, 255));
         connexionButton.setText("Connexion");
