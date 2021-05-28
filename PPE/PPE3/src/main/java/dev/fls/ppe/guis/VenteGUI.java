@@ -15,7 +15,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -114,7 +113,7 @@ public class VenteGUI extends javax.swing.JFrame {
         nomLabel5 = new javax.swing.JLabel();
         modifierQuantite = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        panierProductsList = new javax.swing.JList<>();
+        panierProductsList = new JList<Object>();
         deleteProduct = new javax.swing.JButton();
         FinishVente = new javax.swing.JButton();
         CancelVente = new javax.swing.JButton();
@@ -519,7 +518,7 @@ public class VenteGUI extends javax.swing.JFrame {
     private void modifierQuantiteActionPerformed(ActionEvent e) {
         if(panierProductsList.getSelectedIndex() < 0) panierProductsList.setSelectedIndex(0);
         QuantiteGUI quantiteGUI = new QuantiteGUI(this);
-        quantiteGUI.setProduct(ProductManager.getInstance().getProductWithNameFromDB(panierProductsList.getSelectedValue()));
+        quantiteGUI.setProduct(ProductManager.getInstance().getProductWithNameFromDB((String) panierProductsList.getSelectedValue()));
         quantiteGUI.setLocation(this.getLocation());
         quantiteGUI.setVisible(true);
     }
@@ -541,6 +540,7 @@ public class VenteGUI extends javax.swing.JFrame {
         }
 
         if(!contains) {
+            System.out.println(product);
             ProductManager.getInstance().addProductInVente(vente, ProductManager.getInstance().getProductWithNameFromDB(product));
             model.addElement(product);
         } else {
@@ -560,7 +560,7 @@ public class VenteGUI extends javax.swing.JFrame {
     }
 
     private void deleteProductActionPerformed(ActionEvent e) {
-        VenteManager.getInstance().removeProductFromVente(vente, ProductManager.getInstance().getProductWithNameFromDB(panierProductsList.getSelectedValue()));
+        VenteManager.getInstance().removeProductFromVente(vente, ProductManager.getInstance().getProductWithNameFromDB((String) panierProductsList.getSelectedValue()));
         updatePanierProducts(panierProductsList);
     }
 
@@ -648,7 +648,7 @@ public class VenteGUI extends javax.swing.JFrame {
     private javax.swing.JLabel nomLabel4;
     private javax.swing.JLabel nomLabel5;
     private javax.swing.JPanel panierPanel;
-    private javax.swing.JList<String> panierProductsList;
+    private JList<Object> panierProductsList;
     private javax.swing.JTextField prenomField1;
     private javax.swing.JLabel prenomLabel1;
     private javax.swing.JComboBox<String> productsList;

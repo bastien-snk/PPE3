@@ -56,8 +56,7 @@ dispose();
     private void updateAgents(JList list) {
         AccountManager.getInstance().addAccountsFromDB();
         DefaultListModel model = (DefaultListModel) list.getModel();
-
-        list.removeAll();
+        model.clear();
         for(int i = 0; i < AccountManager.getInstance().getAgents().size(); i++) {
             Account account = AccountManager.getInstance().getAgents().get(i);
             model.add(i, account.getIdAgent() + " - " + account.getUsername());
@@ -99,7 +98,7 @@ dispose();
         for(int i = 0; i < VenteManager.getInstance().getVentes().size(); i++) {
             Vente vente = VenteManager.getInstance().getVentes().get(i);
             if(vente.getDateVente().startsWith(String.valueOf(year))) {
-                model.add(i, "ID: " + vente.getIdVente() + " - " + vente.getChiffreAffaire() + "€ - Client: " + vente.getIdClient() + " Agent: " + vente.getIdAgent());
+                model.addElement("ID: " + vente.getIdVente() + " - " + vente.getChiffreAffaire() + "€ - Client: " + vente.getIdClient() + " Agent: " + vente.getIdAgent());
             }
         }
 
@@ -196,7 +195,7 @@ dispose();
         prenomField3 = new javax.swing.JTextField();
         prenomLabel3 = new javax.swing.JLabel();
         nomLabel3 = new javax.swing.JLabel();
-        addClientButton5 = new javax.swing.JButton();
+        supprimerAgentButton = new javax.swing.JButton();
         categoriesList = new javax.swing.JComboBox<>();
         nomLabel5 = new javax.swing.JLabel();
         statistiquesPanel = new javax.swing.JPanel();
@@ -689,10 +688,10 @@ dispose();
         nomLabel3.setForeground(new java.awt.Color(255, 255, 255));
         nomLabel3.setText("Nom");
 
-        addClientButton5.setBackground(new java.awt.Color(16, 86, 160));
-        addClientButton5.setForeground(new java.awt.Color(255, 255, 255));
-        addClientButton5.setText("Supprimer l'agent");
-        addClientButton5.addActionListener(new java.awt.event.ActionListener() {
+        supprimerAgentButton.setBackground(new java.awt.Color(16, 86, 160));
+        supprimerAgentButton.setForeground(new java.awt.Color(255, 255, 255));
+        supprimerAgentButton.setText("Supprimer l'agent");
+        supprimerAgentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addClientButton5ActionPerformed(evt);
             }
@@ -717,7 +716,7 @@ dispose();
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(addClientButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(addClientButton5))))
+                                                        .addComponent(supprimerAgentButton))))
                                 .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -743,7 +742,7 @@ dispose();
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(addClientButton2)
                                                 .addGap(19, 19, 19)
-                                                .addComponent(addClientButton5)
+                                                .addComponent(supprimerAgentButton)
                                                 .addGap(9, 9, 9)))
                                 .addComponent(telephoneField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(37, Short.MAX_VALUE))
@@ -1098,7 +1097,7 @@ dispose();
     private javax.swing.JButton addClientButton2;
     private javax.swing.JButton addClientButton3;
     private javax.swing.JButton addClientButton4;
-    private javax.swing.JButton addClientButton5;
+    private javax.swing.JButton supprimerAgentButton;
     private javax.swing.JButton adminButton;
     private javax.swing.JComboBox<String> categoriesList;
     private javax.swing.JButton clientsButton;

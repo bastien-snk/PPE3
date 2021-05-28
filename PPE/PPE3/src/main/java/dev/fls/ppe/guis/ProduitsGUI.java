@@ -14,6 +14,7 @@ import dev.fls.ppe.managers.ProductManager;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -73,10 +74,10 @@ public class ProduitsGUI extends javax.swing.JFrame {
         menuPanel = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         panelCategorie = new javax.swing.JPanel();
-        categoriesList = new javax.swing.JComboBox<>();
+        categoriesList = new JComboBox<Object>();
         CategoriesLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        productsList = new javax.swing.JList<>();
+        productsList = new JList<Object>();
         ventesPanel = new javax.swing.JPanel();
         creerFactureButton = new javax.swing.JButton();
         gererProduit = new javax.swing.JPanel();
@@ -391,7 +392,9 @@ dispose();
 
     private void addProductButtonActionPerformed(ActionEvent evt) {
         try {
-            int count = DataAccessObject.getInstance().requeteSelection("SELECT count(*) FROM produits").getInt(0) + 1;
+            ResultSet rs = DataAccessObject.getInstance().requeteSelection("SELECT count(*) AS count FROM produits");
+            rs.first();
+            int count = rs.getInt("count") + 1;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -413,11 +416,11 @@ dispose();
                     }
                 }
                 if(product.getIdCategorie() == categorieSelected.getIdCategorie()) {
-                    listeProductsModel.add(i, product.getNomProduit() + " - " + product.getPrix() + "€");
+                    listeProductsModel.addElement(product.getNomProduit() + " - " + product.getPrix() + "€");
                 }
             }
         } else {
-            listeProductsModel.add(0, "PAS DE PRODUITS POUR CETTE CATEGORIE");
+            listeProductsModel.addElement("PAS DE PRODUITS POUR CETTE CATEGORIE");
         }
         productsList.setModel(listeProductsModel);
     }
@@ -481,7 +484,7 @@ dispose();
     private javax.swing.JLabel CategoriesLabel;
     private javax.swing.JButton addProductButton;
     private javax.swing.JButton adminButton;
-    private javax.swing.JComboBox<String> categoriesList;
+    private JComboBox<Object> categoriesList;
     private javax.swing.JButton clientsButton;
     private javax.swing.JButton creerFactureButton;
     private javax.swing.JButton creerVenteButton;
@@ -504,7 +507,7 @@ dispose();
     private javax.swing.JTextField prenomField1;
     private javax.swing.JTextField prenomField2;
     private javax.swing.JLabel prenomLabel1;
-    private javax.swing.JList<String> productsList;
+    private JList<Object> productsList;
     private javax.swing.JList<String> productsList1;
     private javax.swing.JButton produitsButton;
     private javax.swing.JTextField telephoneField1;

@@ -85,7 +85,7 @@ public class ClientsGUI extends javax.swing.JFrame {
         addClientButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listeClients = new javax.swing.JList<>();
+        listeClients = new JList<Object>();
         precedentButton = new javax.swing.JButton();
         suivantButton = new javax.swing.JButton();
         selectionButton = new javax.swing.JButton();
@@ -580,7 +580,7 @@ public class ClientsGUI extends javax.swing.JFrame {
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel emailLabel1;
     private javax.swing.JLabel emailLabel2;
-    private javax.swing.JList<String> listeClients;
+    private JList<Object> listeClients;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel modifierPanel;
