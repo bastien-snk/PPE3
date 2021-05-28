@@ -28,7 +28,8 @@ public class ClientsGUI extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Perpi&Co - Clients");
         modifierPanel.setVisible(false);
-        /*updateClientsList();
+	updateClientsList();
+        /*
         untoggleAdminOptions();*/
     }
 
