@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 public class FactureManager {
     Document document = new Document();
     PdfWriter pdf;
-    String path = "C:\\Users\\%username%\\Documents\\";
+    String path = "%homedrive%\\Users\\%username%\\Documents\\";
     Vente vente;
 
     public FactureManager(Vente vente) throws FileNotFoundException, DocumentException {

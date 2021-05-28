@@ -19,7 +19,7 @@ public class DataAccessObject {
     /**
      * Informations de connexion
      */
-    private static String nomServeur = "10.0.10.140";
+    private static String nomServeur = "172.18.0.1";
     private static String port = "3306";
     private static String nomBdd = "ppe3";
     private static String nomUtilisateur = "root";

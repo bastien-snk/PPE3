@@ -80,14 +80,14 @@ public class ClientManager {
      * @return client - Client recherché (null si aucun correspondant)
      */
     public Client getClientByIdFromDB(int id) {
-        ResultSet rs = DataAccessObject.getInstance().requeteSelection("SELECT * FROM `clients` WHERE idClient = '"+ id +"'");
+        ResultSet rs = DataAccessObject.getInstance().requeteSelection("SELECT * FROM `cient_user` WHERE id = '"+ id +"'");
         try {
             while (rs.next()) {
-                int idClient = rs.getInt("idClient");
-                String nomClient = rs.getString("nomClient");
-                String prenomClient = rs.getString("prenomClient");
-                String emailClient = rs.getString("emailClient");
-                String telephoneClient = rs.getString("telephoneClient");
+                int idClient = rs.getInt("id");
+                String nomClient = rs.getString("nom");
+                String prenomClient = rs.getString("prenom");
+                String emailClient = rs.getString("email");
+                String telephoneClient = rs.getString("telephone");
                 removeClient(getClientById(id));
                 clients.add(new Client(idClient, nomClient, prenomClient, emailClient, telephoneClient));
             }
@@ -103,10 +103,10 @@ public class ClientManager {
      * @return idClient - id le plus grand
      */
     public int getMaxId() {
-        ResultSet rs = DataAccessObject.getInstance().requeteSelection("SELECT MAX(idClient) FROM clients");
+        ResultSet rs = DataAccessObject.getInstance().requeteSelection("SELECT MAX(id) FROM client_user");
         try {
             while (rs.next()) {
-                int idClient = rs.getInt("idClient");
+                int idClient = rs.getInt("id");
                 return idClient;
             }
         } catch (SQLException throwables) {
@@ -122,7 +122,7 @@ public class ClientManager {
      */
     public void addClient(Client client) {
         try {
-            if(DataAccessObject.getInstance().requeteAction("INSERT INTO `clients` (`idClient`, `nomClient`, `prenomClient`, `emailClient`, `telephoneClient`) VALUES (NULL, '"+ client.getNom() +"', '"+ client.getPrenom() +"', '"+ client.getEmail() +"', '"+ client.getTelephone() +"');") > 0) {
+            if(DataAccessObject.getInstance().requeteAction("INSERT INTO `client_user` (`id`, `nom`, `prenom`, `email`, `telephone`, `roles`, `password`) VALUES (NULL, '"+ client.getNom() +"', '"+ client.getPrenom() +"', '"+ client.getEmail() +"', '"+ client.getTelephone() +"', '[\"ROLE_USER\"', '123');") > 0) {
                 clients.add(client);
                 JOptionPane.showMessageDialog(null, "Client créé !");
             }
@@ -151,15 +151,15 @@ public class ClientManager {
         String emailClient = "";
         String telephoneClient = "";
 
-        ResultSet rs = DataAccessObject.getInstance().requeteSelection("SELECT * FROM `clients`");
+        ResultSet rs = DataAccessObject.getInstance().requeteSelection("SELECT * FROM `client_user`");
         try {
             clients.clear();
             while (rs.next()) {
-                id = rs.getInt("idClient");
-                nomClient = rs.getString("nomClient");
-                prenomClient = rs.getString("prenomClient");
-                emailClient = rs.getString("emailClient");
-                telephoneClient = rs.getString("telephoneClient");
+                id = rs.getInt("id");
+                nomClient = rs.getString("nom");
+                prenomClient = rs.getString("prenom");
+                emailClient = rs.getString("email");
+                telephoneClient = rs.getString("telephone");
                 clients.add(new Client(id, nomClient, prenomClient, emailClient, telephoneClient));
             }
         } catch (SQLException throwables) {
@@ -173,7 +173,7 @@ public class ClientManager {
      * @param client - Client mis à jour
      */
     public void updateClientInfos(Client client) {
-        int successed = DataAccessObject.getInstance().requeteAction("UPDATE `clients` SET `nomClient` = '"+ client.getNom() +"', `prenomClient` = '"+ client.getPrenom() +"', `emailClient` = '"+ client.getEmail() +"', `telephoneClient` = '"+ client.getTelephone() +"' WHERE `clients`.`idClient` = '"+ client.getId() +"';");
+        int successed = DataAccessObject.getInstance().requeteAction("UPDATE `client_user` SET `nom` = '"+ client.getNom() +"', `prenom` = '"+ client.getPrenom() +"', `email` = '"+ client.getEmail() +"', `telephone` = '"+ client.getTelephone() +"' WHERE `client_user`.`id` = '"+ client.getId() +"';");
         if(successed > 0) {
             JOptionPane.showMessageDialog(null, "Le client " + client.getPrenom() + " " + client.getNom() + " à été mis à jour !");
         } else {
