@@ -32,7 +32,9 @@ public class Vente {
         this.idVente = idVente;
         this.idClient = idClient;
         this.idAgent = idAgent;
-        this.dateVente = dateVente;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDateTime now = LocalDateTime.now();
+        this.dateVente = dtf.format(now);
         this.chiffreAffaire = chiffreAffaire;
     }
 
